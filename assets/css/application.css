@@ -1,6 +1,4 @@
-/*!
- * Yo dis is Kyle's
- */
+
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article,
 aside,
@@ -172,6 +170,31 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+a.flag {
+    z-index: 100;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+}
+.fr {
+    background-image: url("../images/flags/Flag-icon-fr.png");
+}
+.en {
+    background-image: url("../images/flags/Flag-icon-en.png");
+}
+.spinner{
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightseagreen;
+}
+
 @media print {
   * {
     text-shadow: none !important;

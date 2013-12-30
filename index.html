@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="mywebsite">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +8,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Ahmed BENSAAD</title>
-    <link href="assets/themes/twitter/css/application.css" rel="stylesheet">
+    <link href="assets/css/application.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="/assets/themes/twitter/js/html5shiv.js"></script>
-    <script src="/assets/themes/twitter/js/respond/respond.min.js"></script>
+    <script src="/assets/js/html5shiv.js"></script>
+    <script src="/assets/js/respond/respond.min.js"></script>
     <![endif]-->
-    <link href="assets/themes/twitter/ico/favicon.png" rel="shortcut icon" type="image/x-icon"/>
-    <script src="assets/themes/twitter/js/modernizr.custom.js"></script>
+    <link href="assets/ico/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+    <script src="assets/js/modernizr.custom.js"></script>
 </head>
 
-<body class="home bg bg-1">
+<body class="home bg bg-1" ng-controller="website-ctrl" ng-cloak>
+<a href="" class="flag" ng-class="lang()" ng-click="switchLang()"></a>
+<div class="spinner"></div>
 <!-- begin content -->
 <div class="content">
     <section id="main" class="mast mast-trans mast-head">
         <div class="container">
             <div data-spy="affix" data-offset-top="30" class="page-title">
-                <h4 class="text-light">Master</h4>
+                <h4 class="text-light">{{ 'master' | translate }}</h4>
                 <h4 class="text-light">science et technologie du logiciel</h4>
 
-                <h1>Développeur logiciel</h1>
+                <h1>{{ 'développeur logiciel' | translate }}</h1>
                 <hr class="separator"/>
                 <a href="mailto:ahmed.bensaad@outlook.com" class="btn btn-lg btn-border"><span aria-hidden="true"
                                                                                                class="icon-mail"></span>
-                    Contactez Moi</a>
+                    {{ 'Contactez Moi' | translate }}</a>
                 <ul class="list-inline list-social text-50 push-top-lg">
                     <li><a href="http://fr.linkedin.com/in/ahmedbensaad"><span aria-hidden="true" class="icon-linkedin"
                                                                                title="Linkedin"></span></a></li>
@@ -46,59 +48,57 @@
     <div id="header" class="header">
         <div class="container text-center">
             <ul class="list-inline hidden-xs list-nav">
-                <li><a href="#about" data-toggle="tooltip" title="Qui suis-je?" class="smooth">à propos</a></li>
-                <li><a href="#portfolio" data-toggle="tooltip" title="Curriculum vitae" class="smooth">c.v</a></li>
+                <li><a href="#about" data-toggle="tooltip" title="Qui suis-je?" class="smooth">{{ 'à propos' | translate }}</a></li>
+                <li><a href="#portfolio" data-toggle="tooltip" title="Curriculum vitae" class="smooth">cv</a></li>
                 <li><a href="#blog" data-toggle="tooltip" title="Mon blog" class="smooth">Blog</a></li>
                 <li class="list-item-logo"><a href="#main" class="smooth"><span aria-hidden="true"
                                                                                 class="icon-star"></span></a>
                 </li>
-                <li><a href="#skills" data-toggle="tooltip" title="Compétences" class="smooth">compétence</a></li>
+                <li><a href="#skills" data-toggle="tooltip" title="Compétences" class="smooth">{{ 'compétences' | translate }}</a></li>
                 <li><a href="#work" data-toggle="tooltip" title="expérience professionnelle"
-                       class="smooth">expérience</a>
+                       class="smooth">{{ 'expériences' | translate }}</a>
                 </li>
             </ul>
         </div>
     </div>
     <section id="about" class="mast mast-dark mast-collab" data-spy="scroll" data-target="#header">
         <div class="container">
-            <h3 class="h2">à propos de moi</h3>
+            <h3 class="h2">{{ 'à propos de moi' | translate }}</h3>
 
             <p class="text-30">J'ai 25 ans </p>
 
             <p class="text-30">Et je suis passionné par l'informatique </p>
             <hr class="separator"/>
             <div class="row push-top-lg push-bottom-lg">
-                <p class="text-xxl">Je fut longtemps passionné par les mathématique avant de m'orienté dans le domaine
+                <p class="text-xxl">Je fut longtemps passionné par les mathématique avant de m'orienter dans le domaine
                     informatique </p>
 
-                <p class="text-xxl">pour ce qui est des loisirs .... </p>
+                <p class="text-xxl"> .... </p>
             </div>
             <a href="#portfolio" class="btn btn-lg btn-trans"><span aria-hidden="true"
-                                                                    class="icon-arrow-bottom push-right-sm"></span> Voir
-                mon
-                c.v</a>
+                                                                    class="icon-arrow-bottom push-right-sm"></span> {{ 'voir mon cv' | translate }}</a>
         </div>
     </section>
     <section id="portfolio" class="mast mast-yellow">
         <div class="container">
-            <h3 class="h2">C.V</h3>
+            <h3 class="h2">CV</h3>
 
-            <p class="text-xxl">C.V général</p>
+            <p class="text-xxl">CV général</p>
             <iframe width="100%" height="700px;"
                     src="http://bensaad-ahmed.com/pdfjs/web/viewer.html?file=http://bensaad-ahmed.com/pdfjs/web/test.pdf"></iframe>
 
             <div class="btn-group">
                 <a href="http://bensaad-ahmed.com/pdfjs/web/viewer.html" class="btn btn-lg btn-border"><span
                         aria-hidden="true"
-                        class="icon-download"></span> Télécharger</a>
+                        class="icon-download"></span> {{ 'télécharger' | translate }}</a>
             </div>
         </div>
     </section>
     <section id="blog" class="mast mast-trans bg-cover bg-2">
         <div class="container">
-            <h3 class="h2">Mon blog</h3>
+            <h3 class="h2">{{ 'Mon blog' | translate }}</h3>
 
-            <p class="text-30">Les derniers postes sur mon blog</p>
+            <p class="text-30">{{ 'Les derniers postes' | translate }}</p>
             <hr class="separator"/>
             <div class="row text-left">
                 <div id="recent-posts" class="col-sm-9 col-sm-offset-2 col-md-7 col-md-offset-3">
@@ -106,13 +106,12 @@
             </div>
 
             <a href="http://benahm.tumblr.com" class="btn btn-lg btn-danger"><span aria-hidden="true"
-                                                                                   class="icon-newspaper"></span> Voir
-                mon blog</a>
+                                                                                   class="icon-newspaper"></span>{{ 'voir mon blog' | translate }}</a>
         </div>
     </section>
     <section id="skills" class="mast mast-teal">
         <div class="container">
-            <h3 class="h2">compétences</h3>
+            <h3 class="h2">{{ 'compétences' | translate }}</h3>
 
             <p class="text-xxl"></p>
 
@@ -170,14 +169,14 @@
     </section>
     <section id="work" class="mast mast-trans bg-cover bg-3">
         <div class="container">
-            <h3 class="h2">expériences</h3>
+            <h3 class="h2">{{ 'expériences' | translate }}</h3>
             <p class="text-xxl">Ma carriére professionelle a commencé en 2013 avec mon stage de fin d'études</p>
             <hr class="separator"/>
             <div class="row row-timeline text-left">
                 <div class="col-sm-4">
                     <div class="timeline-heading"><span aria-hidden="true" class="circle circle-warning"></span>
-                        Décembre
-                        2013 - ?
+                        Janvier
+                        2014 - ?
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -209,11 +208,10 @@
     </section>
     <footer class="mast mast-dark">
         <div class="container">
-            <h3 class="h3">Merci pour votre visite</h3>
+            <h3 class="h3">{{ 'mercivisite' | translate }}</h3>
             <a href="mailto:ahmed.bensaad@outlook.com" class=" btn btn-lg btn-border push-bottom"><span
                     aria-hidden="true"
-                    class="icon-mail"></span> Contactez
-                moi</a>
+                    class="icon-mail"></span> {{ 'Contactez Moi' | translate }} </a>
 
             <ul class="list-inline list-social text-30">
                 <li><a href="http://fr.linkedin.com/in/ahmedbensaad"><span aria-hidden="true" class="icon-linkedin"
@@ -233,7 +231,7 @@
     <div class="sidebar-heading">
         <a class="sidebar-toggle pull-right btn btn-none btn-lg"><span aria-hidden="true"
                                                                        class="icon-cancel-circle"></span></a>
-        <a class="sidebar-brand smooth" href="#main"><img src="assets/themes/twitter/images/logo.png" width="70"/></a>
+        <a class="sidebar-brand smooth" href="#main"><img src="assets/images/logo.png" width="70"/></a>
     </div>
     <hr/>
     <ul class="nav nav-stacked text-xxl">
@@ -269,13 +267,16 @@
 } catch (e) {
 }</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="assets/themes/twitter/js/bootstrap.min.js"></script>
-<script src="assets/themes/twitter/js/application.js"></script>
-<script src="assets/themes/twitter/js/highcharts.js"></script>
-<script src="assets/themes/twitter/js/tumblr.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+<script src="assets/js/angular-i18n.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/application.js"></script>
+<script src="assets/js/highcharts.js"></script>
+<script src="assets/js/tumblr.js"></script>
 <script>
     $(function () {
         new Tumblr.RecentPosts($("#recent-posts")).render()
+        $(".spinner").hide();
     })
 </script>
 <script>
